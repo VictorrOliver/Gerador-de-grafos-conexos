@@ -60,18 +60,14 @@ while True:
         num_arestas = int(input("Digite a quantidade desejada de arestas: "))
         print()
 
-        if num_arestas < num_vertices - 1:
-            print("Erro: O número mínimo de arestas para um grafo conectado é", num_vertices - 1)
-        else:
-            grafo, lista_adjacencia = criar_grafo(num_vertices, num_arestas)
-            if grafo:
-                nome_arquivo = input("Nome do arquivo: ")
-                escrever_lista_adjacencia(nome_arquivo, lista_adjacencia)
-                print("Grafo criado com sucesso.")
-                nx.draw(grafo, with_labels=True)
-                plt.show()
+        grafo, lista_adjacencia = criar_grafo(num_vertices, num_arestas)
+        if grafo:
+            nome_arquivo = input("Nome do arquivo: ")
+            escrever_lista_adjacencia(nome_arquivo, lista_adjacencia)
+            print("Grafo criado com sucesso.")
+            nx.draw(grafo, with_labels=True)
+            plt.show()
                 
-
     elif opcao == '2':
         break
 
